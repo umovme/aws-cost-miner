@@ -34,9 +34,8 @@ public class SavingPlansDiscountCalculator {
         List<String> subscriptionAlreadyCalculated = new ArrayList<>();
 
         for (BillingInfo billingInfo : billingInfos) {
-            if (subscriptionAlreadyCalculated.contains(billingInfo.getSubscriptionId())) {
+            if (subscriptionAlreadyCalculated.contains(billingInfo.getSubscriptionId()))
                 continue;
-            }
 
             if (billingInfo.getRecordType().equals("SavingsPlanNegation")) {
                 if (oneHourSampleOfSavingPlans.containsKey(billingInfo.getSubscriptionId())) {

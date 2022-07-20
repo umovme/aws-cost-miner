@@ -51,7 +51,7 @@ public class BillingInfo {
     @JsonAlias({"Rate", "BlendedRate", "lineItem/BlendedRate"})
     private BigDecimal rate;
 
-    @JsonAlias({"Cost", "UnBlendedCost", "lineItem/UnblendedCost"})
+    @JsonAlias({"TotalCost", "UnBlendedCost", "lineItem/UnblendedCost"})
     private BigDecimal cost;
 
     @JsonAlias("RecordType")
@@ -158,7 +158,7 @@ public class BillingInfo {
             return cost.multiply(BigDecimal.ONE.subtract(savingPlanDiscount)).setScale(4, HALF_EVEN).negate();
         }
 
-        return cost;
+        return cost == null ? BigDecimal.ZERO : cost;
     }
 
     public void setCost(BigDecimal cost) {
