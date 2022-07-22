@@ -1,5 +1,4 @@
 # AWS Cost Miner
-[![Build Status](https://travis-ci.com/robsonbittencourt/aws-cost-miner.svg?branch=master)](https://travis-ci.com/robsonbittencourt/aws-cost-miner)   [![Docker Stars](https://img.shields.io/docker/stars/robsonbittencourt/aws-cost-miner.svg)](https://hub.docker.com/r/robsonbittencourt/aws-cost-miner/)  [![Docker Pulls](https://img.shields.io/docker/pulls/robsonbittencourt/aws-cost-miner.svg)](https://hub.docker.com/r/robsonbittencourt/aws-cost-miner/)  [![image-size](https://images.microbadger.com/badges/image/robsonbittencourt/aws-cost-miner.svg)](http://microbadger.com/images/robsonbittencourt/aws-cost-miner)
 
 > Application to extract useful information from AWS Billing Report
 
@@ -35,7 +34,7 @@ docker run --rm \
     --name aws-cost-miner \
     -v $(pwd)/data.csv:/app/data.csv \
     -e report=EC2_COST_REPORT \
-    robsonbittencourt/aws-cost-miner
+    umovmetraining/aws-cost-miner
 ```
 
 Replace *$(pwd)/data.csv* with *$(pwd)/YOUR_FILE_NAME.csv* to run the command.
@@ -48,7 +47,7 @@ docker run --rm \
     -v $(pwd)/data.csv:/app/data.csv \
     -e report=EC2_COST_REPORT \
     -e groupBy="user:Name" \
-    robsonbittencourt/aws-cost-miner
+    umovmetraining/aws-cost-miner
 ```
 
 ### RESERVED INSTANCE USAGE REPORT
@@ -62,6 +61,6 @@ docker run --rm \
     --name aws-cost-miner \
     -v $(pwd)/data.csv:/app/data.csv \
     -e report=RESERVED_INSTANCE_USAGE_REPORT \
-    robsonbittencourt/aws-cost-miner
+    umovmetraining/aws-cost-miner
 ```
 
